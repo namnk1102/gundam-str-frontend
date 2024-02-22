@@ -40,6 +40,7 @@ const deleteOrder = (item) => {
     spaFetch()(`${$apiUrl.ORDER}${item.id}/`, {
         method: 'DELETE',
     }).then(res => {
+
         tableData.value = tableData.value.filter(i => i.id !== item.id)
         ElMessage.success(
             "Huỷ đơn hàng thảnh công"

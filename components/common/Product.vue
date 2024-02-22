@@ -5,6 +5,7 @@ import {ShoppingCart} from "@element-plus/icons-vue";
 import {fakeProducts} from "@/constants/fakeData.js"
 import spaFetch from "~/plugins/fetch.js";
 
+
 const props = defineProps({
     advertising: {
         type: String,

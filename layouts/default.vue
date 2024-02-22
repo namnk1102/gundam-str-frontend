@@ -1,9 +1,9 @@
 <script setup>
-
 import MenuItem from "@/components/common/MenuItem.vue"
 import { Search, ShoppingCart } from "@element-plus/icons-vue"
 import {useAuthStore} from "~/stores/auth.js";
 import spaFetch from "~/plugins/fetch.js";
+
 
 const route = useRoute()
 const router = useRouter()
