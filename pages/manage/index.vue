@@ -8,8 +8,15 @@ definePageMeta({
 
 import TableOrder from "~/components/manage/TableOrder.vue";
 import TableUser from "~/components/manage/TableUser.vue";
+import {useAuthStore} from "~/stores/auth.js";
 
 const active = ref('1')
+const auth = useAuthStore()
+
+const logOut = () => {
+    auth.deleteAuth()
+    window.location.reload()
+}
 
 const handleChange = (key) => {
     console.log(key)
@@ -42,7 +49,13 @@ const handleChange = (key) => {
                 <el-menu-item index="3">
                     <span>Quản lý tài khoản</span>
                 </el-menu-item>
+                <el-menu-item>
+                    <span class="cursor-pointer hover:underline hover:text-red-700 mt-20 ml-2 text-white" @click="logOut">
+                        Đăng xuất
+                    </span>
+                </el-menu-item>
             </el-menu>
+
             <TableProduct v-if="active === '1'" class="flex-1 overflow-auto"/>
             <TableOrder v-if="active === '2'" class="flex-1 overflow-auto"/>
             <TableUser v-if="active === '3'" class="flex-1 overflow-auto"/>

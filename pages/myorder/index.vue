@@ -20,7 +20,7 @@ const getOrder = () => {
     spaFetch()($apiUrl.ORDER, {
         method: 'GET',
         params: {
-            user: auth.$state.user.id,
+            user: auth.$state.user && auth.$state.user.id ? auth.$state.user.id : null,
             pageSize: 20
         }
     }).then(res => {

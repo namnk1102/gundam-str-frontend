@@ -69,7 +69,7 @@ const rules = reactive({
 
 
 
-const handleRegister = async () => {
+const  yảhandleRegister = async () => {
     await form.value.validate(async (valid, fields) => {
         if (valid) {
             loading.value = true
